@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509131930) do
+ActiveRecord::Schema.define(:version => 20130509133821) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20130509131930) do
   end
 
   create_table "tracks", :force => true do |t|
-    t.string   "track_name"
     t.integer  "album_id"
     t.integer  "song_id"
     t.datetime "created_at", :null => false
