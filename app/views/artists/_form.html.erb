@@ -1,0 +1,20 @@
+<%= form_for(@artist) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <% Band.all.each do |band| %>
+    <%= check_box_tag(
+      "artist[band_ids][]",
+      band.id,
+      @artist.bands.include?(band),
+      :id => "#{band.name}")
+      %>
+      <%= label_tag "#{band.name}", band.name%><br>
+  <%end%>
+
+  <%= hidden_field_tag "artist[band_ids][]" %>
+  <%= f.submit %>
+<% end %>
+

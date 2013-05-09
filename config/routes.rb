@@ -6,5 +6,7 @@ JukeBox::Application.routes.draw do
   resources :albums
   resources :tracks
   resources :songs
+  resources :artists
+  resources :band_memberships
 
 end

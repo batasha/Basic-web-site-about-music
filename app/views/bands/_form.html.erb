@@ -3,6 +3,18 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <% Artist.all.each do |artist| %>
+    <%= check_box_tag(
+      "band[artist_ids][]",
+      artist.id,
+      @band.artists.include?(artist),
+      :id => "#{artist.name}")
+      %>
+      <%= label_tag "#{artist.name}", artist.name%><br>
+  <%end%>
+
+  <%= hidden_field_tag "band[artist_ids][]" %>
   <%= f.submit %>
 <% end %>
 
