@@ -2,11 +2,17 @@
 
 <% @albums.each do |album| %>
   <div class= "field">
-    <h3><%= link_to album.title, album_url(@album) %></h3>
+    <h3><%= link_to album.title, album_url(album) %></h3>
       <ul>
         <% album.songs.each do |song|%>
-          <li><%= song.song_title %></li>
+          <li><%= link_to song.song_title, song_url(song) %></li>
         <%end%>
       </ul>
   </div>
 <%end%>
+
+<br>
+<br>
+<%= link_to 'All The Songs!', songs_url %><br>
+<%= link_to 'All The Tracks!', tracks_url %><br>
+<%= link_to 'All The Bands!', bands_url %><br>

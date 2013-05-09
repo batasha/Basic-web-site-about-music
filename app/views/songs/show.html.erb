@@ -1,0 +1,11 @@
+<h1><%= @song.song_title %></h1>
+
+<ul>
+  <% @song.tracks.each do |track|%>
+   <li><%= link_to @song.song_title, track_url(track) %></li>
+   <li><%= link_to track.album.title, album_url(track.album) %></li>
+   <li><%= link_to track.band.name, band_url(track.band) %></li><br><br>
+  <%end%>
+</ul>
+
+<p><%= link_to "Edit #{@song.song_title}", edit_song_url(@song)%></p>

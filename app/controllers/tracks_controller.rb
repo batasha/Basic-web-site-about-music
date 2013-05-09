@@ -15,7 +15,7 @@ class TracksController < ApplicationController
   end
 
   def create
-    song_id= Song.find_or_create_by_song_title(params[:title].downcase).id
+    song_id = Song.find_or_create_by_song_title(params[:title].downcase).id
 
     params[:track][:song_id] = song_id
 
@@ -45,7 +45,6 @@ class TracksController < ApplicationController
     else
       render :edit
     end
-
   end
 
 
