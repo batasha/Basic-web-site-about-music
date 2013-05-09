@@ -1,0 +1,12 @@
+<h1> All of the Albums... All of them. </h1>
+
+<% @albums.each do |album| %>
+  <div class= "field">
+    <h3><%= link_to album.title, album_url(@album) %></h3>
+      <ul>
+        <% album.songs.each do |song|%>
+          <li><%= song.song_title %></li>
+        <%end%>
+      </ul>
+  </div>
+<%end%>

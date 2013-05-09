@@ -1,0 +1,12 @@
+<h1><%= @album.title %> by <%=@album.band.name%>,
+  <%= @album.live == 1 ? "Live" : "Studio"%></h1>
+
+
+<h3> Tracks </h3>
+<ul>
+  <% @album.tracks.each do |track| %>
+    <li>
+      <%= link_to track.song.song_title, track_url(track) %>
+    </li>
+  <% end %>
+</ul>

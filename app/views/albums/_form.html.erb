@@ -1,0 +1,15 @@
+<%= form_for(@album) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :band %>
+    <%= f.collection_select :band_id, Band.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :recorded %>
+    <%= f.select :live, [["Live", 1], ["Studio", 0]] %>
+  </div>
+  <%= f.submit %>
+<% end %>
