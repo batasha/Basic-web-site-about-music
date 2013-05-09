@@ -6,3 +6,5 @@
   <li> <%= link_to album.title, album_url(album) %> </li>
   <% end %>
 </ul>
+
+<p><%= link_to "Edit #{@band.name}", edit_band_url(@band)%></p>

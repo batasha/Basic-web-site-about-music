@@ -1,0 +1,21 @@
+<%= form_for(@track) do |f| %>
+  <div class="field">
+    <%= f.label :title%><br>
+    <%= text_field_tag :title%>
+  </div>
+  <div class="field">
+    <%= f.label :album %>
+    <%= f.collection_select :album_id,
+      Album.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :bonus %>
+    <%= f.check_box :bonus, :bonus => 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :lyrics %><br>
+    <%= f.text_area :lyrics %>
+  </div>
+  <%= f.submit %>
+<% end %>
+

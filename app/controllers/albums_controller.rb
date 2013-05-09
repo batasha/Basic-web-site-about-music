@@ -22,4 +22,21 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def edit
+    @album = Album.find(params[:id])
+  end
+
+  def update
+    @album = Album.find(params[:id])
+    @album.update_attributes(params[:album])
+
+    if @album.save
+      redirect_to album_url(@album)
+    else
+      render :edit
+    end
+
+  end
+
+
 end

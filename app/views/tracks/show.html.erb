@@ -1,0 +1,17 @@
+<h1><%= @track.title %></h1>
+
+<h3> Lyrics </h3>
+<div class = "field">
+  <%= @track.lyrics %>
+</div>
+
+<div class = "field">
+  <p>Album: <%= @track.album.title%></p>
+</div>
+
+<div class = "field">
+  <p>Band: <%= @track.band.name%></p>
+</div>
+
+
+<p><%= link_to "Edit #{@track.title}", edit_track_url(@track)%></p>
